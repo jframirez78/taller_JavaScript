@@ -381,10 +381,7 @@ console.log (arr3);
 
 /*Spread en literals de objetos*/
 
-const obj1 = {foo: 'bar', x: 42};
-const obj2 = {foo: 'baz', y: 5};
-const mergeObj (...objects) =>
-({...objects});
+
 let mergeObj =merge(obj1,obj2);
 //{0: {foo: 'bar', x:42}, 1:{foo: 'baz', y:5 } }
 let mergeObj2 = merge ({},obj1,obj2);
@@ -451,7 +448,7 @@ class Dog extends Animal {
 let dog = new Dog ('Rex');
 dog.speak();
 /*Para utilizar los métodos del padre se utiliza la palabra super.*/
-class Animal {
+class Animal1 {
     constructor(name) {
         this.name = name;
     }
@@ -459,34 +456,34 @@ class Animal {
         console.log(this.name + 'makes a noise.');
     }
 }
-class Dog extends Animal {
+class Dog1 extends Animal1 {
     speak() {
         super.speak(); //Super
         console.log(this.name + 'barks.');
     }
 }
-let dog = new Dog('Rex');
+let Dog2 = new Dog1('Rex');
 dog.speak();
 
 /*Objeto map "Es utilizado para contener 
 pares key/value (clave/valor)"*/
-let map = new Map ([['k1', 'v1'], ['k2', 'v2']]);
-console.log(map.size) //2
-let map = new Map();
-map.set('k1', 'v1').set('k2', 'v2');
-console.log(map.get('k1')); //v1
-console.log(map.has('k2')); //true
-for (let kv of map.entries())
+let Mapx = new Mapx ([['k1', 'v1'], ['k2', 'v2']]);
+console.log(Mapx.size) //2
+let Map3 = new Map3();
+Map3.set('k1', 'v1').set('k2', 'v2');
+console.log(Map3.get('k1')); //v1
+console.log(Map3.has('k2')); //true
+for (let kv of Map3.entries())
    console.log(kv[0] +":" + kv[0]);
 
 //*Objeto set "Se utiliza para tener valores únicos*//
 let set = new Set([1,2,4,2,59,9,4,9,1]);
 console.log(set.size); //5
 
-let set = new Set();
-set.add(5).add(9).add(59).add(9);
-console.log (set.has(9));
-for (let v of set.values())
+let setn = new setn();
+setn.add(5).add(9).add(59).add(9);
+console.log (setn.has(9));
+for (let v of setn.values())
 console.log(v);
 
 /*Promises "es una mejora para la programacion asíncrona"*/
@@ -517,19 +514,21 @@ asyncFunc("Work 1") //Task 1
 }, function(error) {
     console.log(error);
 })
-.then(fuction(result) {
-    console.log(result);
+.then(function(result) {
+    console.log(result)
 }, function(error) {
     console.log(error);
 });
 console.log("end");
 
 /*Iteradores y generadores*/
-let myIterableObj = {
-    [Symbol.interator] : fuction* ()
-{
-    yield 1; yield 2; yield 3;
-    ...
+let myIterableObj = {};
+  myIterableObj[Symbol.iterator] = fuction* ('') 
+  {
+    yield (1); 
+    yield (2); 
+    yield (3);
+    };
     console.log([...myIterableObj]);
 function* idMaker (){
     let index = 0;
@@ -540,7 +539,7 @@ var gen = idMaker ();
 console.log(gen.next().value);
 /*un objeto con 7 elementos usando Symbol.
  iterator y funciones generadoras.*/
-const arr = ['0', '1','4','a','9','c','16'];
+const arr5 = ['0', '1','4','a','9','c','16'];
 const my_obj = {
     [Symbol.interator] : function*()
 {
@@ -558,7 +557,7 @@ console.log(all);
 /*modulos*/
 //lib/math.js
 export let sum = (x, y) =>
-{return x+y;}
+{ return x + y };
 export let pi = 3.14;
 
 //app.js
